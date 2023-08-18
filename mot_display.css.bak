@@ -1,0 +1,21 @@
+body{
+	display: flex;
+    background: url("pictures/road2.jpg");
+	background-position:center;
+	background-size:cover;
+    align-items: center;
+    justify-content: center;
+	min-height: 100vh;
+}
+
+.wrapper{
+    position:relative;
+    background: transparent;
+    border:2px solid rgba(255,255,255, 0.5);
+    border-radius:20px;
+    backdrop-filter:blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

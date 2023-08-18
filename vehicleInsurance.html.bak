@@ -1,0 +1,46 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["user1"])){
+        header("location:registration_login.php");
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="vehicleInsurancehtml.css">
+		<title>Insurance</title>
+	</head>
+	<body>
+	
+	<header>
+            <h2 class="logo">Logo</h2>
+            <nav class="navigation">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+	</header>
+	
+	<style>
+	
+		}
+	</style>
+		<div class="wrapper">
+			
+			<div class="links">
+				<h2 class="title">INSURANCE</h2>
+				<span class="vilink">
+					<a href="vehicleInsurance.php">VEHICLE INSURANCE</a>
+				</span>
+				<span class="milink">
+					<a href="merchandiseInsurance.php">MERCHANDISE INSURANCE</a>
+				</span>
+			</div>
+		</div>
+	</body>
+</html>

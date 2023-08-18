@@ -1,0 +1,41 @@
+.button{
+    width:25px;
+    height:25px;
+    border-radius:100%;
+    cursor:pointer;
+    position: absolute;
+    top: 25px;
+}
+.profile{
+    width:25px;
+    height:25px;
+    position: absolute;
+    left: -1.5px;
+    top: -2px;
+    border-radius:100%;
+    cursor:pointer;
+}
+.popup{
+    width:200px;
+    background:beige;
+    border-radius: 6px;
+    position:absolute;
+    top:50px;
+	right:-87px;
+    transform:translate(-50%,-50%) scale(0.1);
+    text-align:center;
+    visibility:hidden;
+    transition: transform 0.2s, top 0.2s;
+}
+.profile-detail{
+    width:25px;
+    height:25px;
+    border-radius:100%;
+    cursor:pointer;
+    margin-top:-50%;
+}
+.open-popup{
+    visibility: visible;
+    top:100px;
+    transform:translate(-50%,-50%) scale(1);
+}

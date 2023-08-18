@@ -1,0 +1,9 @@
+.detail{
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.value{
+    color: #000;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
