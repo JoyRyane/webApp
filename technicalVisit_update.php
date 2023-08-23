@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="Insurance.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="vehicleInsurance.css">
+    <link rel="stylesheet" href="gray_card.css">
     <title>Responsive Dashboard</title>
 </head>
 <body>
@@ -66,6 +67,11 @@
 
 		<div class="wrapper">
             <h2>Technical Visit Registration Update</h2>
+            <div class="input-box">
+                <span class="input_success">
+                    <?php echo $success; ?>
+                </span>
+            </div>
             <form action="technicalVisit_update.php?updateid" method="post" autocomplete="off">
                     <p class="success register-success"></p>
                     <?php 
@@ -93,9 +99,11 @@
                         <div class="input-box">
                             <span class="icon"><img src="pictures/user.png" style="width:30px;"/></span>
                             <input type="text" name="Owner" id="Owner" value="<?php echo $Owner?>">
-                            <p class="error owner-error">
-                                <?php echo $owner_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php 
+									echo $ownerErr; 
+								?>
+                            </span>
                         </div>
                     </div>
 
@@ -106,9 +114,6 @@
                         <div class="input-box">
                             <span class="icon"><img src="pictures/user.png" style="width:30px;"/></span>
                             <input type="text" name="Dealer" id="Dealer" value="<?php echo $Dealer?>" readonly>
-                            <p class="error dealer-error">
-                                <?php echo $dealer_error; ?>
-                            </p>
                         </div>
                     </div>
 
@@ -119,9 +124,9 @@
                         <div class="input-box">
                             <span class="icon"><img src="pictures/email.png"/></span>
                             <input type="email" name="Email" id="Email" value="<?php echo $Email?>">
-                            <p class="error email-error">
-                                <?php echo $email_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php echo $emailErr; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -132,9 +137,9 @@
                         <div class="input-box"> 
                             <span class="icon"><img src="pictures/registration.png" style="width:30px;height:30px;"/></span>
                             <input type="text" name="carReg" id="carReg" value="<?php echo $carReg?>">
-                            <p class="error carReg-error">
-                                <?php echo $carReg_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php echo $carRegErr; echo $countErr; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -144,10 +149,9 @@
                         </div>
                         <div class="input-box">
                             <input type="date" name="Issuedate" id="Issuedate" value="<?php echo $Issuedate?>">
-                            <p class="error Issuedate-error">
-                                <?php echo $Issuedate_error; ?>
-                            </p>
-
+                            <span class="input_error">
+                                <?php echo $issueDateErr; echo $dateErr; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -157,9 +161,9 @@
                         </div>
                         <div class="input-box">
                             <input type="date" name="Expirydate" id="Expirydate" value="<?php echo $Expirydate?>">
-                            <p class="error Expirydate-error">
-                            <?php echo $Expirydate_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php echo $expiryDateErr; echo $dateErr; ?>
+                            </span>
                         </div>
                         <div class="input-box">
                             <input type="hidden" name="id" value=<?php echo $id;?>>

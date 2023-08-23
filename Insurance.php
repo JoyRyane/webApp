@@ -63,9 +63,6 @@
         </aside>
 		<main>
 			<h1>Insurance</h1>
-			<div class="date">
-				<input type="date">
-			</div>
 			<div class="insights">
 				<div class="sales">
 					<span class="material-symbols-sharp">analytics</span>

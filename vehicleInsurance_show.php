@@ -65,6 +65,9 @@
             </div>
         </aside>
 		<div class="wrapper">
+			<button class="btn">
+                <a href="vehicleInsuranceDisplay.php" >BACK</a>
+            </button>
             <h2>Customer Vehicle Insurance Details</h2>
             <p class="detail">Owner:               <br> <p class="value"><?php echo $Owner; ?></p> </p>
             <p class="detail">Dealer:              <br> <p class="value"><?php echo $Dealer; ?></p> </p>

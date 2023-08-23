@@ -17,6 +17,7 @@
 				else if(empty($Email)){
 					$emailErr = "Email required";
 				}
+				
                 else if(!filter_var($Email,FILTER_VALIDATE_EMAIL)){
                     $emailErr = "Invalid Email";
                 }

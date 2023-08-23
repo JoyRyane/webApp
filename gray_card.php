@@ -94,9 +94,6 @@
                             <span class="icon"><img src="pictures/user.png" style="width:30px;"/></span>
                             <input type="text" name="Dealer" id="Dealer" value=<?php
 							echo $name;?> readonly>
-                            <p class="error dealer-error">
-                                <?php echo $dealer_error; ?>
-                            </p>
                         </div>
                     </div>
 
@@ -133,9 +130,8 @@
                         <div class="input-box">
                             <input type="date" name="Issuedate" id="Issuedate">
                             <span class="input_error">
-                                <?php echo $issueDateErr; ?>
+                                <?php echo $issueDateErr; echo $dateErr; ?>
                             </span>
-
                         </div>
                     </div>
 
@@ -146,14 +142,9 @@
                         <div class="input-box">
                             <input type="date" name="Expirydate" id="Expirydate">
                             <span class="input_error">
-                                <?php echo $expiryDateErr; ?>
+                                <?php echo $expiryDateErr; echo $dateErr; ?>
                             </span>
                         </div>
-                    </div>
-					<div class="input-box">
-                        <span class="input_error">
-                            <?php echo $dateErr; ?>
-                        </span>
                     </div>
                     
 					<input type="submit" name="register" class="btn" value="Register">

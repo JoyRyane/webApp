@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="Insurance.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="vehicleInsurance.css">
+    <link rel="stylesheet" href="gray_card.css">
     <title>Responsive Dashboard</title>
 </head>
 <body>
@@ -40,6 +41,7 @@
                 <span class="material-symbols-sharp">close</span>
                 </div>
             </div>
+
             <div class="sidebar">
                 <a href="Insurance.php">
                     <span class="material-symbols-sharp">grid_view</span>
@@ -77,6 +79,11 @@
         </aside>
 		<div class="wrapper">
             <h2>Luggage Insurance Registration</h2>
+            <div class="input-box">
+                <span class="input_success">
+                    <?php echo $success; ?>
+                </span>
+            </div>
             <form action="luggageInsurance.php" method="post" autocomplete="off">
                     <p class="success register-success"></p>
                     <div class="form-control">
@@ -86,9 +93,9 @@
                         <div class="input-box">
                             <span class="icon"><img src="pictures/user.png" style="width:30px;"/></span>
                             <input type="text" name="Owner" id="Owner">
-                            <p class="error owner-error">
-                                <?php echo $owner_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php echo $ownerErr; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -100,9 +107,6 @@
                             <span class="icon"><img src="pictures/user.png" style="width:30px;"/></span>
                             <input type="text" name="Dealer" id="Dealer" value=<?php
 							echo $name;?> readonly>
-                            <p class="error dealer-error">
-                                <?php echo $dealer_error; ?>
-                            </p>
                         </div>
                     </div>
 
@@ -113,9 +117,9 @@
                         <div class="input-box">
                             <span class="icon"><img src="pictures/email.png"/></span>
                             <input type="email" name="Email" id="Email">
-                            <p class="error email-error">
-                                <?php echo $email_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php echo $emailErr; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -126,9 +130,9 @@
                         <div class="input-box"> 
                             <span class="icon"><img src="pictures/registration.png" style="width:30px;height:30px;"/></span>
                             <input type="text" name="carReg" id="carReg">
-                            <p class="error carReg-error">
-                                <?php echo $carReg_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php echo $carRegErr; echo $countErr;?>
+                            </span>
                         </div>
                     </div>
 
@@ -139,9 +143,9 @@
                         <div class="input-box"> 
                             <span class="icon"><img src="pictures/registration.png" style="width:30px;height:30px;"/></span>
                             <input type="text" name="Nature" id="Nature">
-                            <p class="error nature-error">
-                                <?php echo $nature_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php echo $natureErr; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -151,9 +155,9 @@
                         </div>
                         <div class="input-box">
                             <input type="date" name="Issuedate" id="Issuedate">
-                            <p class="error Issuedate-error">
-                                <?php echo $Issuedate_error; ?>
-                            </p>
+                            <span class="input_error">
+                                <?php echo $issueDateErr; echo $dateErr; ?>
+                            </span>
 
                         </div>
                     </div>
@@ -164,12 +168,11 @@
                         </div>
                         <div class="input-box">
                             <input type="date" name="Expirydate" id="Expirydate">
-                            <p class="error Expirydate-error">
-                            <?php echo $Expirydate_error; ?>
-                            </p>
+                            <span class="input_error">
+                            <?php echo $expiryDateErr; echo $dateErr; ?>
+                            </span>
                         </div>
                     </div>
-
                     <div class="form-control">
                         <div class="label">
                             <label>Further Notes</label>
@@ -177,11 +180,9 @@
                         <div class="input-box">
                             <span class="icon"><img src="pictures/notice.jpg" style="width:30px;height:30px;"/></span>
                             <textarea rows="3" columns="100" name="Notice" class="detail" placeholder="Further Notes"></textarea>
-                            <!--<label>Details</label>-->
                         </div>
                     </div>
 					<input type="submit" name="register" class="btn" value="Register">
-                    <p class="error register-error"></p>
 				</form>
         </div>
 		<div class="right">

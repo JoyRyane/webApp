@@ -1,6 +1,6 @@
 <?php
 	require_once("admin_connect.php");
-	$ownerErr = $dealerErr = $emailErr = $carRegErr = $issueDateErr = $expiryDateErr = $dateErr = $countErr = $carRegError = $success = "";
+	$ownerErr = $emailErr = $carRegErr = $issueDateErr = $expiryDateErr = $dateErr = $countErr = $carRegError = $success = "";
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if(isset($_POST["update"])){
 			$id         = $_POST["id"];

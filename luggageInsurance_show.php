@@ -65,7 +65,10 @@
             </div>
         </aside>
 		<div class="wrapper">
-            <h2>Customer Vehicle Insurance Details</h2>
+			<button class="btn">
+                <a href="luggageInsuranceDisplay.php" >BACK</a>
+            </button>
+            <h2>Customer Luggage Insurance Details</h2>
             <p class="detail">Owner:               <br> <p class="value"><?php echo $Owner; ?></p> </p>
             <p class="detail">Dealer:              <br> <p class="value"><?php echo $Dealer; ?></p> </p>
             <p class="detail">Email:               <br> <p class="value"><?php echo $Email; ?></p> </p>

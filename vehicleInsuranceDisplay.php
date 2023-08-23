@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Insurance.css">
+	<link rel="stylesheet" href="search-bar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="record_Display.css">
     <title>Responsive Dashboard</title>
@@ -64,52 +65,66 @@
         </aside>
 		<div class="wrapper">
             <h2>All Registered Vehicle Insurance</h2>
+			<div class="search-bar">
+				<form method="post" class="search-form">
+					<input type="text" class="search-txt" placeholder="  search" name="searchRequest">
+					<button type="submit" class="search-btn" name="submit">Search</button>
+				</form>
+			</div>
                 <button class="btn">
                     <a href="vehicleInsurance.php" >Add user</a>
                 </button>
                 <table class="table">
-                    <thead>
+					<?php
+						include 'vehicleInsurance_search.php';
+					?>
+                   <!-- <thead>
                         <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Owner</th>
 						<th scope="col">R\N</th>
-						<th scope="col">Action</th>
+						
+						<th scope="col">Action</th>-->
                         <!--<th scope="col">Dealer</th>
                         <th scope="col">Email</th>
                         <th scope="col">Notice</th>
                         <th scope="col">Issuedate</th>
-                        <th scope="col">Expirydate</th>-->
+                        <th scope="col">Expirydate</th>
                         </tr>
-                    </thead>
+                    </thead>-->
                     <tbody>
-            <?php
-                require_once "admin_connect.php";
-                $query = "select * from vehicleinsurance";
-                $result = mysqli_query($conn,$query);
-                if($result){
-                    while($row=mysqli_fetch_assoc($result)){
-                        $id = $row['id'];
-                        $Owner = $row['Owner'];
-						$carReg = $row['carReg'];
-                       /* $Dealer = $row['Dealer'];
-                        $Email = $row['Email'];
-                        $Notice = $row['Notice'];
-                        $Issuedate = $row['Issuedate'];
-                        $Expirydate = $row['Expirydate'];*/
-                        echo '
-                        <tr>
-                            <th scope="row">'.$id.'</th>
-                            <td>'.$Owner.'</td>
-							<td>'.$carReg.'</td>
-                            <td>
-								<button class="btn-success"><a href="vehicleInsurance_show.php?showid='.$id.'" class="text-light">Show</a></button>
-                            </td>
-                        </tr>
-                        ';
-                    }
-                }
-            ?>
-            </tbody>
+					<?php
+						//include 'search.php';
+					?>
+					<?php
+						/*require_once "admin_connect.php";
+						$query = "select * from vehicleinsurance";
+						$result = mysqli_query($conn,$query);
+						if($result){
+							
+							while($row=mysqli_fetch_assoc($result)){
+								$id = $row['id'];
+								$Owner = $row['Owner'];
+								$carReg = $row['carReg'];*/
+							/* $Dealer = $row['Dealer'];
+								$Email = $row['Email'];
+								$Notice = $row['Notice'];
+								$Issuedate = $row['Issuedate'];
+								$Expirydate = $row['Expirydate'];*/
+								/*echo '
+								<tr>
+									<th scope="row">'.$id.'</th>
+									<td>'.$Owner.'</td>
+									<td>'.$carReg.'</td>
+									<td>
+										<button class="btn-success"><a href="vehicleInsurance_show.php?showid='.$id.'" class="text-light">Show</a></button>
+									</td>
+								</tr>
+								';
+							}
+						}*/
+					?>
+            <!--</tbody>-->
          </table>
             
         </div>

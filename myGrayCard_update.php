@@ -112,9 +112,6 @@
                         <div class="input-box">
                             <span class="icon"><img src="pictures/user.png" style="width:30px;"/></span>
                             <input type="text" name="Dealer" id="Dealer" value="<?php echo $Dealer?>" readonly>
-                            <span class="input_error">
-                                <?php echo $dealerErr; ?>
-                            </span>
                         </div>
                     </div>
 
