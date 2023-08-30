@@ -19,6 +19,7 @@
 <body>
     <?php 
         include 'technicalVisitUpdate_php_connect.php';
+        include "top_bar.php";
         require_once "admin_connect.php";
         
        /* if($result){
@@ -33,15 +34,6 @@
     
     <div class="container">
         <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="./images/check.png" alt="">
-                    <h2>EGA<span class="danger">TOR</span></h2>
-                </div>
-                <div class="close" id="close-btn">
-                <span class="material-symbols-sharp">close</span>
-                </div>
-            </div>
             <div class="sidebar">
 				<a href="technical_visit.php" class="side__link ">
 					<span class="material-symbols-sharp">grid_view</span>
@@ -185,7 +177,7 @@
 				</form>
         </div>
 		<div class="right">
-			<div class="top">
+			<!--<div class="top">
 				<button id="menu-btn">
 				<span class="material-symbols-sharp">menu</span>
 				</button>
@@ -303,7 +295,7 @@
 						<h3>Add Product</h3>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
     </div>
 	<script src="Insurance.js"></script>

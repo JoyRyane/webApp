@@ -65,6 +65,22 @@ body{
     margin: 0 auto;
     gap: 1.8rem;
     grid-template-columns: 14rem auto 23rem;
+    
+
+   /* position:relative;
+			width:400px;
+			height:440px;
+			background: transparent;
+			border:2px solid rgba(255,255,255, 0.5);
+			border-radius:20px;
+			backdrop-filter:blur(20px);
+			box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+            transition: transform .5s ease,height .2s ease;
+            overflow: hidden;
+            transform: scale(0);*/
 }
 
 a{
@@ -158,10 +174,10 @@ aside .sidebar{
     background: transparent;
     border:2px solid rgba(255,255,255, 0.5);
     border-radius:20px;
-    box-shadow: var(--box-shadow);
+    box-shadow: none;
 }
 aside .sidebar:hover{
-    box-shadow: none;
+    box-shadow: var(--box-shadow);
 }
 aside h3{
     font-weight: 500;
@@ -170,6 +186,7 @@ aside .sidebar a{
     display: flex;
     color: var(--color-info-dark);
     margin-left: 2rem;
+    margin-top: 10px;
     gap: 1rem;
     align-items: center;
     position: relative;
@@ -220,7 +237,7 @@ aside .sidebar .message-count{
 }
 
 main{
-	margin-top: 30px;
+	margin-top: 1.4rem;
 }
 main .date{
 	display: inline-block;
@@ -360,7 +377,7 @@ main .recent-orders a{
     color: var(--color-primary);
 }
 .right{
-    margin-top: 1.4rem;
+    margin-top: 2.4rem;
 }
 .right .top{
     display: flex;

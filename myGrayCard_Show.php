@@ -17,19 +17,12 @@
     <title>Responsive Dashboard</title>
 </head>
 <body>
-    <?php include 'myGrayCardShow_php_connect.php'?>
+    <?php 
+		include 'myGrayCardShow_php_connect.php';
+		include "top_bar.php";
+	?>
     <div class="container">
-        <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="./images/check.png" alt="">
-                    <h2>EGA<span class="danger">TOR</span></h2>
-                </div>
-                <div class="close" id="close-btn">
-                <span class="material-symbols-sharp">close</span>
-                </div>
-            </div>
-            
+        <aside>            
             <div class="sidebar">
 				<a href="ministry_of_transport.php" class="side__link ">
 					<span class="material-symbols-sharp">grid_view</span>
@@ -62,7 +55,7 @@
             <p class="detail">Expiry Date:         <br> <p class="value"><?php echo $Expirydate; ?></p> </p>
         </div>
 		<div class="right">
-			<div class="top">
+			<!--<div class="top">
 				<button id="menu-btn">
 				<span class="material-symbols-sharp">menu</span>
 				</button>
@@ -183,7 +176,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
     </div>
 	<script src="Insurance.js"></script>
    <!-- <script src="merchandiseInsurance.js"></script>-->

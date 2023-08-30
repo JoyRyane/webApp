@@ -161,7 +161,7 @@
                         }
                     }else if($user["Role"] == 'Technical Visit'){
 						if(isset($_SESSION["role3"])){
-                            header("location:technicalVisit.php");
+                            header("location:technical_visit.php");
                             die();
                         }  
                     }

@@ -26,7 +26,7 @@
                             <td>'.$Owner.'</td>
                             <td>'.$carReg.'</td>
                             <td>
-                                <button class="btn-success"><a href="technicalVisit_show.php?showid='.$id.'" class="text-light">Show</a></button>
+                                <button class="btn-success"><a href="technicalVisit_show.php?showid='.$id.'" class="text-light">Details</a></button>
                             </td>
                         </tr>
                     </tbody>';
@@ -66,7 +66,7 @@
                             <td>'.$Owner.'</td>
                             <td>'.$carReg.'</td>
                             <td>
-                                <button class="btn-success"><a href="technicalVisit_show.php?showid='.$id.'" class="text-light">Show</a></button>
+                                <button class="btn-success"><a href="technicalVisit_show.php?showid='.$id.'" class="text-light">Details</a></button>
                             </td>
                         </tr>
                     </tbody>';

@@ -14,18 +14,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Responsive Dashboard</title>
 </head>
+<?php
+	include "top_bar.php";
+?>
 <body>
     <div class="container">
         <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="./images/check.png" alt="">
-                    <h2>EGA<span class="danger">TOR</span></h2>
-                </div>
-                <div class="close" id="close-btn">
-                <span class="material-symbols-sharp">close</span>
-                </div>
-            </div>
             <div class="sidebar">
 				<a href="ministry_of_transport.php" class="side__link  active">
 					<span class="material-symbols-sharp">grid_view</span>
@@ -164,7 +158,7 @@
 				<a href="">Show All</a>
 			</div>
 		</main>
-		<div class="right">
+		<!--<div class="right">
 			<div class="top">
 				<button id="menu-btn">
 				<span class="material-symbols-sharp">menu</span>
@@ -176,30 +170,30 @@
 				<div class="profile">
 					<div class="info">
 						<?php
-							require_once("admin_connect.php");
+							/*require_once("admin_connect.php");
 							$Email 	= $_SESSION['Email'];
 							$sql 	= "SELECT * FROM admin WHERE Email = '$Email' ";
 							$query 	= mysqli_query($conn,$sql);
-							$row 	= mysqli_fetch_assoc($query) ;
+							$row 	= mysqli_fetch_assoc($query) ;*/
 						?>
-						<p>Hey <b><?=$row['Name']?></b> </p>
+						<p>Hey <b><?php//$row['Name']?></b> </p>
 						<small class="text-muted">Admin</small>
 					</div>
 					<div class="profile-photo">
 						<?php
-							$id 	= $row['id'];
+							/*$id 	= $row['id'];
 							$name 	= $row['Name'];
 							$email 	= $row['Email'];
-							$role 	= $row['Role'];
+							$role 	= $row['Role'];*/
 						?>
 						<button type="submit" class="button" onclick="openPopup()" >
-							<img class="profile" src="<?=$row['image_url']?>" alt="" >
+							<img class="profile" src="<?php//$row['image_url']?>" alt="" >
 						</button>
 						<div class="popup" id="popup" >
-							<img class="profile-detail" src="<?=$row['image_url']?>" alt="">
-							<p>Name:<?php echo $name; ?></p>
-							<p>Email:<?php echo $email; ?></p>
-							<p>Role:<?php echo $role; ?></p>
+							<img class="profile-detail" src="<?php//$row['image_url']?>" alt="">
+							<p>Name:<?php //echo $name; ?></p>
+							<p>Email:<?php //echo $email; ?></p>
+							<p>Role:<?php //echo $role; ?></p>
 						</div>
 					</div>
 				</div>
@@ -286,7 +280,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
     </div>
 	<script src="Insurance.js"></script>
 	<!--<script src="vehicleInsurancehtml2.js"></script>-->

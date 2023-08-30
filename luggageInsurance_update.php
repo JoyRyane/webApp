@@ -19,29 +19,12 @@
 <body>
     <?php 
         include 'luggageInsuranceUpdate_php_connect.php';
+        include "top_bar.php";
         require_once "admin_connect.php";
-        
-       /* if($result){
-            while($row = mysqli_fetch_assoc($result)){
-                /*$id = $row['id'];
-                $Owner = $row['Owner'];
-                echo $id;
-                echo $Owner;
-            }
-        }*/
     ?>
     
     <div class="container">
         <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="./images/check.png" alt="">
-                    <h2>EGA<span class="danger">TOR</span></h2>
-                </div>
-                <div class="close" id="close-btn">
-                <span class="material-symbols-sharp">close</span>
-                </div>
-            </div>
             <div class="sidebar">
                 <a href="Insurance.php">
                     <span class="material-symbols-sharp">grid_view</span>
@@ -203,7 +186,6 @@
                         <div class="input-box">
                             <span class="icon"><img src="pictures/notice.jpg" style="width:30px;height:30px;"/></span>
                             <textarea rows="3" columns="100" name="Notice" class="detail"><?php echo $Notice;?></textarea>
-                            <!--<label>Details</label>-->
                         </div>
                     </div>
 					<input type="submit" name="update" class="btn" value="Update">
@@ -211,7 +193,7 @@
 				</form>
         </div>
 		<div class="right">
-			<div class="top">
+			<!--<div class="top">
 				<button id="menu-btn">
 				<span class="material-symbols-sharp">menu</span>
 				</button>
@@ -329,10 +311,9 @@
 						<h3>Add Product</h3>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
     </div>
 	<script src="Insurance.js"></script>
-   <!-- <script src="luggageInsurance.js"></script>-->
 </body>
 </html>

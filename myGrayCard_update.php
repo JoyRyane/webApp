@@ -20,17 +20,6 @@
     <?php 
         include 'grayCardUpdate_php_connect.php';
         require_once "admin_connect.php";
-
-        
-
-       /* if($result){
-            while($row = mysqli_fetch_assoc($result)){
-                /*$id = $row['id'];
-                $Owner = $row['Owner'];
-                echo $id;
-                echo $Owner;
-            }
-        }*/
     ?>
     
     <div class="container">
@@ -136,10 +125,11 @@
                             <span class="icon"><img src="pictures/registration.png" style="width:30px;height:30px;"/></span>
                             <input type="text" name="carReg" id="carReg" value="<?php echo $carReg?>">
                             <span class="input_error">
-                                <?php echo $carRegErr; ?>
+                                <?php echo $carRegErr; echo $countErr; ?>
                             </span>
                         </div>
                     </div>
+
 
                     <div class="form-control">
                         <div class="label">
@@ -299,6 +289,5 @@
 		</div>
     </div>
 	<script src="Insurance.js"></script>
-   <!-- <script src="luggageInsurance.js"></script>-->
 </body>
 </html>

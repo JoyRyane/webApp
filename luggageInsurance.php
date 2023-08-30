@@ -17,8 +17,12 @@
     <title>Responsive Dashboard</title>
 </head>
 <body>
-    <?php include "luggage_php_connect.php" ?>
+    <?php 
+        include "luggage_php_connect.php";
+        include "top_bar.php";
+     ?>
     <?php
+
         require_once("admin_connect.php");
 		$Email 	= $_SESSION['Email'];
 		$sql 	= "SELECT * FROM admin WHERE Email = '$Email' ";
@@ -32,16 +36,6 @@
     ?>
     <div class="container">
         <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="./images/check.png" alt="">
-                    <h2>EGA<span class="danger">TOR</span></h2>
-                </div>
-                <div class="close" id="close-btn">
-                <span class="material-symbols-sharp">close</span>
-                </div>
-            </div>
-
             <div class="sidebar">
                 <a href="Insurance.php">
                     <span class="material-symbols-sharp">grid_view</span>
@@ -92,7 +86,7 @@
                         </div>
                         <div class="input-box">
                             <span class="icon"><img src="pictures/user.png" style="width:30px;"/></span>
-                            <input type="text" name="Owner" id="Owner">
+                            <input type="text" name="Owner" id="Owner" value="<?php echo isset($_POST['Owner']) ? htmlspecialchars($_POST['Owner']) : '' ?>">
                             <span class="input_error">
                                 <?php echo $ownerErr; ?>
                             </span>
@@ -116,7 +110,7 @@
                         </div>
                         <div class="input-box">
                             <span class="icon"><img src="pictures/email.png"/></span>
-                            <input type="email" name="Email" id="Email">
+                            <input type="email" name="Email" id="Email" value="<?php echo isset($_POST['Email']) ? htmlspecialchars($_POST['Email']) : '' ?>">
                             <span class="input_error">
                                 <?php echo $emailErr; ?>
                             </span>
@@ -129,7 +123,7 @@
                         </div>
                         <div class="input-box"> 
                             <span class="icon"><img src="pictures/registration.png" style="width:30px;height:30px;"/></span>
-                            <input type="text" name="carReg" id="carReg">
+                            <input type="text" name="carReg" id="carReg" value="<?php echo isset($_POST['carReg']) ? htmlspecialchars($_POST['carReg']) : '' ?>">
                             <span class="input_error">
                                 <?php echo $carRegErr; echo $countErr;?>
                             </span>
@@ -142,7 +136,7 @@
                         </div>
                         <div class="input-box"> 
                             <span class="icon"><img src="pictures/registration.png" style="width:30px;height:30px;"/></span>
-                            <input type="text" name="Nature" id="Nature">
+                            <input type="text" name="Nature" id="Nature" value="<?php echo isset($_POST['Nature']) ? htmlspecialchars($_POST['Nature']) : '' ?>">
                             <span class="input_error">
                                 <?php echo $natureErr; ?>
                             </span>
@@ -154,7 +148,7 @@
                             <label>Issued Date<span>*</span></label>
                         </div>
                         <div class="input-box">
-                            <input type="date" name="Issuedate" id="Issuedate">
+                            <input type="date" name="Issuedate" id="Issuedate" value="<?php echo isset($_POST['Issuedate']) ? htmlspecialchars($_POST['Issuedate']) : '' ?>">
                             <span class="input_error">
                                 <?php echo $issueDateErr; echo $dateErr; ?>
                             </span>
@@ -167,7 +161,7 @@
                             <label>Expiry Date<span>*</span></label>
                         </div>
                         <div class="input-box">
-                            <input type="date" name="Expirydate" id="Expirydate">
+                            <input type="date" name="Expirydate" id="Expirydate" value="<?php echo isset($_POST['Expirydate']) ? htmlspecialchars($_POST['Expirydate']) : '' ?>">
                             <span class="input_error">
                             <?php echo $expiryDateErr; echo $dateErr; ?>
                             </span>
@@ -179,14 +173,14 @@
                         </div>
                         <div class="input-box">
                             <span class="icon"><img src="pictures/notice.jpg" style="width:30px;height:30px;"/></span>
-                            <textarea rows="3" columns="100" name="Notice" class="detail" placeholder="Further Notes"></textarea>
+                            <textarea rows="3" columns="100" name="Notice" class="detail" placeholder="Further Notes"><?php echo isset($_POST['Notice']) ? htmlspecialchars($_POST['Notice']) : '' ?></textarea>
                         </div>
                     </div>
 					<input type="submit" name="register" class="btn" value="Register">
 				</form>
         </div>
 		<div class="right">
-			<div class="top">
+			<!--<div class="top">
 				<button id="menu-btn">
 				<span class="material-symbols-sharp">menu</span>
 				</button>
@@ -293,7 +287,7 @@
 						<h3>Add Product</h3>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
     </div>
 	<script src="Insurance.js"></script>

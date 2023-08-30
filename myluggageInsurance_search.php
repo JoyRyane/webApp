@@ -25,7 +25,7 @@
                         <td>'.$Owner.'</td>
                         <td>'.$carReg.'</td>
                         <td>
-                            <button class="btn-success"><a href="luggageInsurance_show.php?showid='.$id.'" class="text-light">Show</a></button>
+                            <button class="btn-success"><a href="luggageInsurance_show.php?showid='.$id.'" class="text-light">Details</a></button>
                             <button class="btn-primary"><a href="luggageInsurance_update.php?updateid='.$id.'" class="text-light">Update</a></button>
                             <button class="btn-danger"><a href="luggageInsurance_delete.php?deleteid='.$id.'" class="text-light">Delete</a></button>
                         </td>
@@ -63,7 +63,7 @@
                             <td>'.$Owner.'</td>
                             <td>'.$carReg.'</td>
                             <td>
-                                <button class="btn-success"><a href="luggageInsurance_show.php?showid='.$id.'" class="text-light">Show</a></button>
+                                <button class="btn-success"><a href="luggageInsurance_show.php?showid='.$id.'" class="text-light">Details</a></button>
                                 <button class="btn-primary"><a href="luggageInsurance_update.php?updateid='.$id.'" class="text-light">Update</a></button>
                                 <button class="btn-danger"><a href="luggageInsurance_delete.php?deleteid='.$id.'" class="text-light">Delete</a></button>
                             </td>
