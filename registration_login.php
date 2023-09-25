@@ -4,10 +4,12 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta bane="viewport" content="width=device-width,initial-scale=1.0">
-    <link href="registration_login.css" rel="stylesheet">
+    <link href="registrationLogin.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/gray_card.css">
 	<title>Register/Login</title>
 </head>
 <body>
+	<div class="color-overlay"></div>
     <header>
             <h2 class="logo">Logo</h2>
             <nav class="navigation">
@@ -64,122 +66,13 @@
         }
     ?>
 
-<?php
-
-    if(isset($_POST["register"])){
-		require_once "admin_connect.php";
-		
-        $Name = $_POST["Name"];
-        $Email = $_POST["Email"];
-        $Role = $_POST["Role"];
-        $Password = $_POST["Password"];
-        $Repeat_Password = $_POST["Repeat_Password"];
-		$Image = $_FILES['image'];
-		print_r($_FILES['image']);
-		$img_loc = $_FILES['image']['tmp_name'];
-		$img_name = $_FILES['image']['name'];
-		$img_des = "uploads/".$img_name;
-		move_uploaded_file($img_loc,'uploads/'.$img_name);
-		
-
-        $Password_hash = password_hash($Password, PASSWORD_DEFAULT);
-		$errors = array();
-					
-					if(empty($Name)){
-						array_push($errors, "<b>Name required</b>");
-					}
-					else if(empty($Email)){
-						array_push($errors, "<b>Email required</b>");
-					}
-					else if($Role == 'Pending'){
-						array_push($errors, "<b>Role required</b>");
-					}
-					else if(empty($Password)){
-						array_push($errors, "<b>Password required</b>");
-					}
-					else if(empty($Repeat_Password)){
-						array_push($errors, "<b>Confirm your Password</b>"); 
-					}
-					else if(!filter_var($Email,FILTER_VALIDATE_EMAIL)){
-						array_push($errors, "<b>Invalid Email</b>");
-					}
-					else if(strlen($Password)<8){
-						array_push($errors, "\n<b>Password must be 8 characters long</b>");
-					}
-					else if($Password != $Repeat_Password){
-						array_push($errors, "\n<b>Password does not match</b>");
-					}
-					else if(!preg_match("/[A-Z]/",$Password) ||!preg_match("/[a-z]/",$Password)||!preg_match("/[0-9]/",$Password)
-						||!preg_match("/[^\w]/", $Password)){
-							array_push($errors,"<b>Password must include atleast one uppercase letter, one lowercase letter, one number and a special character</b>");
-					}
-					
-
-        
-		if(!empty($Name) AND !empty($Email) AND !empty($Password) AND !empty($Repeat_Password) AND $Role!='Pending'){
-			$sql = "SELECT * FROM admin WHERE Email = '$Email'";
-			$result = mysqli_query($conn, $sql);
-			$rowCount = mysqli_num_rows($result);
-			if($rowCount > 0){
-				array_push($errors, "<b>Email already exists</b>");
-			}
-		}
-        if(count($errors)>0){
-            foreach($errors as $error){
-                echo "<div class='alert alert-danger'>$error</div>";
-            }
-        }
-		
-		else if(isset($_POST["check"])){
-			if(!empty($Name) AND !empty($Email) AND !empty($Password) AND !empty($Repeat_Password) AND $Role != 'Pending'){
-            
-            $sql = "INSERT INTO admin(Name, Email, Role, Password, image_url)values( ?, ?, ?, ?, ?)";
-            $stmt = mysqli_stmt_init($conn);
-            $prepare = mysqli_stmt_prepare($stmt,$sql);
-            if($prepare){
-                mysqli_stmt_bind_param($stmt,"sssss", $Name, $Email, $Role, $Password_hash, $img_des);
-                mysqli_stmt_execute($stmt);
-                
-            $sql = "SELECT * FROM admin WHERE Email = '$Email'";
-			$result = mysqli_query($conn, $sql);
-			$user = mysqli_fetch_array($result , MYSQLI_ASSOC);
-            if($user){
-				session_start();
-				$_SESSION['Email'] = $Email;
-				$_SESSION["role"]="IC";
-                $_SESSION["role"]="MOT";
-				$_SESSION["role"]="TV";
-                if($user["Role"] == 'Insurance Company'){
-					if(isset($_SESSION["role1"])){
-						header("location:Insurance.php");
-						die();
-					}
-                    }else if($user["Role"] == 'Ministry of Transport'){
-                        if(isset($_SESSION["role2"])){
-                            header("location:ministry_of_transport.php");
-                            die();
-                        }
-                    }else if($user["Role"] == 'Technical Visit'){
-						if(isset($_SESSION["role3"])){
-                            header("location:technical_visit.php");
-                            die();
-                        }  
-                    }
-            }
-            }else{
-                die("Something went wrong!");
-            }
-        }
-		}
-		else if(!isset($_POST["check"])){
-			echo "<b>You must agree to the terms and conditions to register!</b>";
-		}
-        
-    }
+<?php 
+	include 'registration_php_connect.php'
 ?>
 
 	
     <div class="wrapper">
+	<div class="image-overlay"></div>
     <span class="icon-close"><img src="pictures/wCross.png" style="width: 15px;"/></span>
         <div class="form-box login">
             <h2>Login</h2>
@@ -200,7 +93,7 @@
                 </div>
                 <input type="submit" name="login" class="btn" value="Login">
                 <div class="login-register">
-                    <p>Don't have an account?<a href="#" class="register-link" style="font-weight:bold;font-size:20px;color:#fff;"> Register</a></p>
+                    <p>Don't have an account?<a href="#" class="register-link" style="font-weight:bold;font-size:20px;color:#87CEEB;"> Register</a></p>
                 </div>
             </form>
         </div>
@@ -211,6 +104,11 @@
 					<div class="input-box">
 						<span class="icon"><img src="pictures/user.png" style="width:30px;"/></span>
 						<input type="text" name="Name">
+						<span class="input_error">
+                            <?php 
+								echo $nameErr; 
+							?>
+                        </span>
 						<label>Username</label>
 					</div>
 					<div class="input-box">
@@ -247,7 +145,7 @@
 					</div>
 					<input type="submit" name="register" class="btn" value="Register">
 					<div class="login-register">
-						<p>Already have an account?<a href="#" class="login-link" style="font-weight:bold;font-size:20px;color:#fff;"> Login</a></p>
+						<p>Already have an account?<a href="#" class="login-link" style="font-weight:bold;font-size:20px;color:#87CEEB;"> Login</a></p>
 					</div>
 				</form>
 		</div>
